@@ -1,0 +1,23 @@
+{
+  "name": "wibukon",
+  "version": "1.0.0",
+  "description": "Web streaming anime dengan Express dan Tailwind",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "anime",
+    "streaming",
+    "express",
+    "ejs"
+  ],
+  "author": "Hanzzcodee",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
+
