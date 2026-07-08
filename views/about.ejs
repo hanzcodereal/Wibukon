@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <%- include('layout/head') %>
+</head>
+<body class="pb-24 pt-16 md:pt-20 animate-fade">
+    <%- include('layout/navbar') %>
+
+    <main class="container mx-auto px-4 py-10 max-w-2xl">
+        <div class="flex flex-col items-center text-center mb-10 animate-slide">
+            <div class="w-28 h-28 rounded-3xl overflow-hidden shadow-2xl shadow-purple-500/20 mb-6 border-2 border-white/10 relative group">
+                <img src="/wibukon.jpg" alt="WibuKon Logo" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            <h1 class="text-4xl font-black text-white tracking-tighter mb-2">WibuKon</h1>
+            <p class="text-zinc-400 text-sm font-medium px-4 py-1 rounded-full bg-white/5 border border-white/5 inline-block">
+                Nonton Anime Subtitle Indonesia
+            </p>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 mb-10 animate-slide" style="animation-delay: 0.1s;">
+            <div class="glass-card p-4 rounded-2xl text-center border border-white/5">
+                <span class="block text-xl font-bold text-white mb-1">Gratis</span>
+                <span class="text-[10px] text-zinc-500 uppercase tracking-wider font-bold">Akses</span>
+            </div>
+            <div class="glass-card p-4 rounded-2xl text-center border border-white/5">
+                <span class="block text-xl font-bold text-purple-400 mb-1">HD</span>
+                <span class="text-[10px] text-zinc-500 uppercase tracking-wider font-bold">Kualitas</span>
+            </div>
+            <div class="glass-card p-4 rounded-2xl text-center border border-white/5">
+                <span class="block text-xl font-bold text-pink-400 mb-1">Fast</span>
+                <span class="text-[10px] text-zinc-500 uppercase tracking-wider font-bold">Server</span>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-3xl mb-8 animate-slide border border-white/5" style="animation-delay: 0.2s;">
+            <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-purple-500 shadow shadow-purple-500"></span>
+                Tentang Aplikasi
+            </h2>
+            <p class="text-sm text-zinc-400 leading-relaxed text-justify">
+                WibuKon adalah singakatan yaitu. Wibu Kontol, web ini di buat tanpa iklan login, gua membuat web wibukon hanya keisengan sahaja, dan web di rancang responsife di semua device
+            </p>
+        </div>
+
+        <div class="space-y-3 mb-12 animate-slide" style="animation-delay: 0.3s;">
+            <div class="flex items-center gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition">
+                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-sm">Performa Ringan</h3>
+                    <p class="text-xs text-zinc-500">Dibuat dengan html, js, css, and tailwind.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-4 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition">
+                <div class="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                    <h3 class="text-white font-bold text-sm">Update Anime</h3>
+                    <p class="text-xs text-zinc-500">Database anime diperbarui setiap server update.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center animate-slide" style="animation-delay: 0.4s;">
+            <p class="text-xs text-zinc-600 font-medium tracking-wide mb-1">
+                Created By <span class="text-purple-500 font-bold">Hanz</span>
+            </p>
+            <p class="text-[10px] text-zinc-700">© 2025 WibuKon Project</p>
+        </footer>
+    </main>
+</body>
+</html>
