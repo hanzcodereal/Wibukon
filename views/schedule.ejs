@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <%- include('layout/head') %>
+</head>
+<body class="pb-24 pt-16 md:pt-20 animate-fade">
+    <%- include('layout/navbar') %>
+
+    <main class="container mx-auto px-4 py-6">
+        <header class="mb-8 text-center md:text-left">
+            <h1 class="text-2xl md:text-3xl font-black text-white mb-2">Jadwal Rilis</h1>
+            <p class="text-zinc-400 text-sm">Jangan lewatkan episode terbaru anime favoritmu.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <% schedule.forEach((day, index) => { %>
+                <div class="glass-card rounded-2xl p-5 animate-slide" style="animation-delay: <%= index * 0.1 %>s;">
+                    <div class="flex items-center gap-3 mb-4 border-b border-white/5 pb-3">
+                        <div class="w-2 h-8 rounded-full bg-gradient-to-b from-purple-500 to-indigo-500"></div>
+                        <h2 class="text-lg font-bold text-white uppercase tracking-wider"><%= day.day %></h2>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <% day.list.forEach(anime => { %>
+                            <a href="/anime/<%= anime.id %>" class="flex items-center gap-3 group hover:bg-white/5 p-2 -mx-2 rounded-lg transition">
+                                <img src="<%= anime.img %>" class="w-10 h-10 rounded-full object-cover border border-white/10 group-hover:border-purple-500 transition">
+                                <div class="overflow-hidden">
+                                    <h3 class="text-sm font-medium text-zinc-300 group-hover:text-white truncate transition"><%= anime.title %></h3>
+                                    <p class="text-[10px] text-zinc-500">Tayang hari ini</p>
+                                </div>
+                            </a>
+                        <% }) %>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </main>
+</body>
+</html>
+

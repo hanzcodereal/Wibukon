@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <%- include('layout/head') %>
+</head>
+<body class="pb-24 pt-16 md:pt-20 animate-fade">
+    <%- include('layout/navbar') %>
+
+    <main class="container mx-auto px-4 py-6 min-h-[60vh]">
+        <h2 class="text-lg font-bold text-zinc-300 mb-6 flex items-center gap-2">
+            Hasil Pencarian: <span class="text-white">"<%= query %>"</span>
+        </h2>
+        
+        <% if(data && data.length > 0) { %>
+            <div class="space-y-3 animate-slide">
+                <% data.forEach(item => { %>
+                    <a href="/anime/<%= item.id %>" class="flex gap-4 p-3 rounded-2xl glass-card hover:bg-white/5 transition group border border-white/5">
+                        <div class="w-20 h-28 flex-shrink-0 rounded-lg overflow-hidden relative">
+                            <img src="<%= item.img %>" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div class="flex flex-col justify-center py-1 flex-1">
+                            <h3 class="text-sm font-bold text-white line-clamp-2 mb-1 group-hover:text-purple-400 transition"><%= item.title %></h3>
+                            <div class="flex items-center gap-3 text-xs text-zinc-400 mb-2">
+                                <span class="bg-zinc-800 px-2 py-0.5 rounded"><%= item.year %></span>
+                                <span class="flex items-center gap-1 text-yellow-500"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg> <%= item.rating %></span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] text-zinc-500 uppercase tracking-wide"><%= item.status %></span>
+                                <span class="text-[10px] bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">Eps <%= item.eps %></span>
+                            </div>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <div class="flex flex-col items-center justify-center py-20 text-center animate-slide">
+                <div class="w-24 h-24 bg-zinc-800/50 rounded-full flex items-center justify-center mb-6 relative border border-white/5">
+                    <svg class="w-10 h-10 text-zinc-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <div class="absolute -bottom-1 -right-1 w-8 h-8 bg-red-500/20 text-red-500 rounded-full flex items-center justify-center border border-red-500/30">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-2">Pencarian Tidak Ditemukan</h3>
+                <p class="text-zinc-500 max-w-xs mx-auto">
+                    Tidak Ditemukan Anime <span class="text-purple-400 font-bold">"<%= query %>"</span> dalam pencarian.
+                </p>
+                <a href="/" class="mt-8 bg-zinc-800 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-zinc-700 transition border border-white/5">
+                    Kembali ke Beranda
+                </a>
+            </div>
+        <% } %>
+    </main>
+</body>
+</html>
