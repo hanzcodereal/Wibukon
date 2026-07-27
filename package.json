@@ -10,10 +10,14 @@
     "anime",
     "streaming",
     "express",
-    "ejs"
+    "ejs",
+    "otakudesu"
   ],
   "author": "Hanzzcodee",
   "license": "ISC",
+  "engines": {
+    "node": ">=18.x"
+  },
   "dependencies": {
     "axios": "^1.7.9",
     "cheerio": "^1.0.0",
